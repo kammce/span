@@ -563,6 +563,13 @@ make_span(const std::array<T, N>& arr) noexcept
     return {arr};
 }
 
+template <typename T>
+TCB_SPAN_ARRAY_CONSTEXPR span<const T>
+make_span(std::initializer_list<T> list) noexcept
+{
+    return {list};
+}
+
 template <typename Container>
 constexpr span<typename Container::value_type> make_span(Container& cont)
 {
